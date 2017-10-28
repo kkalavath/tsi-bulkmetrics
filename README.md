@@ -1,10 +1,10 @@
-# tsi-bulkmetrics
+# tsi-bulkmetrics-csvimport
 
 ### Description
 
 This script assists in creating metrics and loading measurement data into TrueSight Intelligence from a CSV file.
 
-- tsi-bulkmetrics.py - main script
+- tsi-bulkmetrics-csvimport.py - main script
 - metric.json - metric configuration file
 
 ### Pre-requisites
@@ -25,16 +25,16 @@ This script assists in creating metrics and loading measurement data into TrueSi
 ### Examples
 #### Create a Metric
 ```
-python3 tsi-bulkmetrics.py metric -f metric.json -e myemail@email.com -k my-api-key-goes-here
+python3 tsi-bulkmetrics-csvimport.py metric -f metric.json -e myemail@email.com -k my-api-key-goes-here
 ```
 #### Send Measurements
 ```
-python3 tsi-bulkmetrics.py measures -s source -m metric -a MyApp -e myemail@email.com -k my-api-key-goes-here -tscol myts -valcol metric_name -f /path/to/measurements.xlsx
+python3 tsi-bulkmetrics-csvimport.py measures -s source -m metric -a MyApp -e myemail@email.com -k my-api-key-goes-here -tscol myts -valcol metric_name -f /path/to/measurements.xlsx
 
 ```
 #### Options for Creating a Metric
 ```
-usage: tsi-bulkmetrics.py metric [-h] -k APIKEY -e EMAIL -f METRICFILE
+usage: tsi-bulkmetrics-csvimport.py metric [-h] -k APIKEY -e EMAIL -f METRICFILE
 
 Parameters:
   -h, --help            show this help message and exit
@@ -48,7 +48,7 @@ Parameters:
 
 #### Options for Sending Measurements
 ```
-usage: tsi-bulkmetrics.py measures [-h] -k APIKEY -e EMAIL -f MEASURESFILE -s
+usage: tsi-bulkmetrics-csvimport.py measures [-h] -k APIKEY -e EMAIL -f MEASURESFILE -s
                                    SOURCE -m METRICNAME -a APPID
                                    [-tscol TSCOL] [-valcol VALCOL]
 
