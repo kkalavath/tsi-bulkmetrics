@@ -61,9 +61,9 @@ Parameters:
   -f MEASURESFILE, --measuresfile MEASURESFILE
                         Excel file containing measurement data
   -s SOURCE,            Column name of the source data. 
-                        Measurement source (e.g. MyServer)
+                        Measurement source column (e.g. sym)
   -m METRICNAME,        Column name of the metric. 
-                        Name of Metric (e.g. MY_COOL_METRIC)
+                        Name of Metric column (e.g. metric)
   -a APPID, --appid APPID
                         TrueSight Intelligence App ID
   -tscol TSCOL          Column name of timestamp data. DEFAULT: ts
