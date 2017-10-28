@@ -1,9 +1,9 @@
 {
-    "name": "TOTAL_TICKET_TIME",
-    "description": "Total Ticket Time",
-    "displayName": "Total Ticket Time (Mins)",
-    "displayNameShort": "TTT_Mins",
-    "unit": "number",
-    "defaultAggregate": "avg",
-    "type": "REMEDY"
+   "name": "cpuusage",
+   "description": "Percentage of CPU time",
+   "displayName": "CPU Used",
+   "displayNameShort": "CPU Used",
+   "unit": "number",
+   "defaultAggregate": "AVG",
+   "type":"SERVER_METRIC"
 }
