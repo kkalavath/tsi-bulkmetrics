@@ -2,7 +2,7 @@
 
 ### Description
 
-This script assists in creating metrics and loading measurement data into TrueSight Intelligence.
+This script assists in creating metrics and loading measurement data into TrueSight Intelligence from a CSV file.
 
 - tsi-bulkmetrics.py - main script
 - metric.json - metric configuration file
@@ -14,11 +14,13 @@ This script assists in creating metrics and loading measurement data into TrueSi
 ### What the script does
 
 - Creates TSI metrics from the command line by parsing the metric.json file
-- Loads measurement data in bulk (DEFAULT: 500 measures at once) from an Excel file
+- Loads measurement data in bulk (DEFAULT: 500 measures at once) from a CSV file
+- It reads the source, metric name, timestamp and measurement column from a CSV file
+- It stages the data to send measurements from the same source in sequence.
 
 ### There are some limitations, however
 
-- Currently, it only reads two columns from the Excel file.  A timestamp column and a measurement column.
+- It is single threaded.
 
 ### Examples
 #### Create a Metric
@@ -27,7 +29,7 @@ python3 tsi-bulkmetrics.py metric -f metric.json -e myemail@email.com -k my-api-
 ```
 #### Send Measurements
 ```
-python3 tsi-bulkmetrics.py measures -s Remedy -m MY_COOL_METRIC -a MyApp -e myemail@email.com -k my-api-key-goes-here -tscol myts -valcol metric_name -f /path/to/measurements.xlsx
+python3 tsi-bulkmetrics.py measures -s source -m metric -a MyApp -e myemail@email.com -k my-api-key-goes-here -tscol myts -valcol metric_name -f /path/to/measurements.xlsx
 
 ```
 #### Options for Creating a Metric
@@ -58,9 +60,9 @@ Parameters:
                         TrueSight Intelligence Account Email
   -f MEASURESFILE, --measuresfile MEASURESFILE
                         Excel file containing measurement data
-  -s SOURCE, --source SOURCE
+  -s SOURCE,            Column name of the source data. 
                         Measurement source (e.g. MyServer)
-  -m METRICNAME, --metricname METRICNAME
+  -m METRICNAME,        Column name of the metric. 
                         Name of Metric (e.g. MY_COOL_METRIC)
   -a APPID, --appid APPID
                         TrueSight Intelligence App ID
