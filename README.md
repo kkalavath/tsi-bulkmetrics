@@ -1,10 +1,10 @@
-# tsi-bulkmetrics-csvimport
+# tsi-bulkmetricsv-csvmultithread
 
 ### Description
 
 This script assists in creating metrics and loading measurement data into TrueSight Intelligence from a CSV file.
 
-- tsi-bulkmetrics-csvimport.py - main script
+- tsi-bulkmetricsv-csvmultithread.py - main script
 - metric.json - metric configuration file
 
 ### Pre-requisites
@@ -25,7 +25,7 @@ This script assists in creating metrics and loading measurement data into TrueSi
 ### Examples
 #### Create a Metric
 ```
-python3 tsi-bulkmetrics-csvimport.py metric -f metric.json -e myemail@email.com -k my-api-key-goes-here
+python3 tsi-bulkmetricsv-csvmultithread.py metric -f metric.json -e myemail@email.com -k my-api-key-goes-here
 ```
 #### Send Measurements
 ```
@@ -34,7 +34,7 @@ python3 tsi-bulkmetrics-csvimport.py measures -s source -m metric -a MyApp -e my
 ```
 #### Options for Creating a Metric
 ```
-usage: tsi-bulkmetrics-csvimport.py metric [-h] -k APIKEY -e EMAIL -f METRICFILE
+usage: tsi-bulkmetricsv-csvmultithread.py metric [-h] -k APIKEY -e EMAIL -f METRICFILE
 
 Parameters:
   -h, --help            show this help message and exit
@@ -48,7 +48,7 @@ Parameters:
 
 #### Options for Sending Measurements
 ```
-usage: tsi-bulkmetrics-csvimport.py measures [-h] -k APIKEY -e EMAIL -f MEASURESFILE -s
+usage: tsi-bulkmetricsv-csvmultithread.py measures [-h] -k APIKEY -e EMAIL -f MEASURESFILE -s
                                    SOURCE -m METRICNAME -a APPID
                                    [-tscol TSCOL] [-valcol VALCOL]
 
